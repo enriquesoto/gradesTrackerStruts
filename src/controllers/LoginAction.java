@@ -3,10 +3,17 @@ package controllers;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
+
 import com.opensymphony.xwork2.ActionSupport;
+
+import dao.LoginDao;
 
 public class LoginAction extends ActionSupport implements SessionAware  {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String dni;
 	private String password;
 	private  Map<String, Object> session;
@@ -20,20 +27,10 @@ public class LoginAction extends ActionSupport implements SessionAware  {
 
 		System.out.println("salida" + dni +"-" +password);
 		
-//		UserDAO userdao = new UserDAO();
-//		user = userdao.identificationUser(dni, password);
-//
-//		if(user != null){
-//			
-//			//Se guarda la session
-//			session.put("user", user);
-//			return SUCCESS;
-//			
-//		}
-//		else{
-//			return ERROR;
-//		}	
-		return SUCCESS;
+		if(LoginDao.validate(dni, password)){
+			return SUCCESS;
+		}
+		return ERROR;
 	}
 
 
