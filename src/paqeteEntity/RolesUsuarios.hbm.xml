@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/07/2014 08:28:28 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="RolesUsuarios" table="roles_usuarios" catalog="episunsa_gradesTracker">
+        <composite-id name="id" class="RolesUsuariosId">
+            <key-property name="id" type="int">
+                <column name="id" />
+            </key-property>
+            <key-property name="usuarioId" type="int">
+                <column name="usuario_id" />
+            </key-property>
+            <key-property name="rolId" type="int">
+                <column name="rol_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="usuarios" class="Usuarios" update="false" insert="false" fetch="select">
+            <column name="usuario_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="rol" class="Rol" update="false" insert="false" fetch="select">
+            <column name="rol_id" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

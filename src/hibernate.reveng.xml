@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-catalog="episunsa_gradesTracker"
+		match-name="usuarios" />
+	<table-filter match-name="roles_usuarios"
+		match-catalog="episunsa_gradesTracker">
+	</table-filter>
+	<table-filter match-name="roles"
+		match-catalog="episunsa_gradesTracker">
+	</table-filter>
+	<table catalog="episunsa_gradesTracker" name="usuarios" class="Usuario" schema="episunsa_gradesTracker">
+		<column name="id"></column>
+		<column name="username"></column>
+		<column name="password"></column>
+		<column name="nombres"></column>
+		<column name="apellidos"></column>
+		<column name="correo"></column>
+		<column name="bloqueado"></column>
+		<column name="ultimo_ingreso"></column>
+		<column name="fecha_registro"></column>
+		<column name="fecha_nacimiento"></column>
+		<column name="comprobado"></column>
+	</table>
+<table catalog="episunsa_gradesTracker" name="roles_usuarios" class="RolUsuario" schema="episunsa_gradesTracker">
+	<column name="id"></column>
+	<column name="usuario_id"></column>
+	<column name="rol_id"></column>
+</table>
+<table catalog="episunsa_gradesTracker" name="roles" class="Rol" schema="episunsa_gradesTracker">
+		<column name="id"></column>
+		<column name="nombre_rol"></column>
+		<column name="descripcion"></column>
+	</table>
+</hibernate-reverse-engineering>
