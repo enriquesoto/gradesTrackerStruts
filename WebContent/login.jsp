@@ -12,7 +12,7 @@
 	<center>
 		<h2>Ingrese Datos</h2>
 		<s:form action="loginUserAction" method="get">
-			<s:textfield name="dni" size="8" label="DNI" />
+			<s:textfield name="dni" size="8" label="usuario" />
 			<s:textfield name="password" size="10" label="Contraseña" type="password" />
 			<s:submit value="validateLogin" />
 		</s:form>
